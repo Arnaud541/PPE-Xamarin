@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ApplicationPourEcole.AjouterNotesLivres" BackgroundColor="#B6FFCE">
+
+    <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+            <Button x:Name="deconnexion" Text="Déconnexion" Clicked="deconnexion_Clicked" HorizontalOptions="End" Margin="0,15,15,0" CornerRadius="10"/>
+            <Label Text="Faire une évaluation" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,0,0,20" FontSize="Large" TextColor="#282929" Font="20" FontFamily="Poppins-Bold"/>
+            <Label Text="Livres à disposition :" FontFamily="Poppins-Bold" FontSize="15" TextColor="#282929" Margin="0,0,0,20" />
+            <ListView x:Name="LivreView" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout Direction="Row" JustifyContent="SpaceAround" AlignItems="Center" BackgroundColor="#FDD7AA">
+                                <Label Text="{Binding Titre}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" TextColor="#282929" Margin="0,0,10,0" FontFamily="Poppins-Bold" />
+                                <Image Source="{Binding Img}" FlexLayout.AlignSelf="End" HorizontalOptions="Start"/>
+                            </FlexLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="boutonEvaluations" Text="Accéder à vos évaluations" Clicked="AccessToEvaluations" HorizontalOptions="Center" Margin="0,15,0,0" CornerRadius="10"/>
+    </StackLayout>
+    
+</ContentPage>
